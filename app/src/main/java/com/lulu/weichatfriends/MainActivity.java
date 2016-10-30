@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
     private WebView mWebView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         mWebView = (WebView) findViewById(R.id.main_web_view);
         //解决点击链接跳转浏览器问题
         mWebView.setWebViewClient(new WebViewClient());
-
         //js支持
         WebSettings settings = mWebView.getSettings();
         settings.setJavaScriptEnabled(true);
@@ -47,13 +45,13 @@ public class MainActivity extends AppCompatActivity {
         JsSupport jsSupport = new JsSupport(this);
         List<FriendsZone> zones = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
-            zones.add(new FriendsZone("鹿鹿" + i, "images/icon.png", "宝宝我爱你!"));
+            zones.add(new FriendsZone("鹿鹿" + i, "images/icon.png", "这里是Html测试数据, 这里是Html测试数据, 这里是Html测试数据" + i));
         }
         Gson gson = new Gson();
         String json = gson.toJson(zones);
         Log.d(TAG, "addJson: json => " + json);
         jsSupport.setJson(json);
-        
+        //添加js交互接口, 并指明js中对象的调用名称
         mWebView.addJavascriptInterface(jsSupport, "weichat");
     }
 

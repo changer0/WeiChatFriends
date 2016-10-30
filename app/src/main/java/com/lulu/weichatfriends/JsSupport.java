@@ -15,8 +15,6 @@ public class JsSupport {
     public JsSupport(Context context) {
         mContext = context;
     }
-
-
     public void setJson(String json) {
         this.json = json;
     }
@@ -32,5 +30,4 @@ public class JsSupport {
     public String getJson(){
         return json;
     }
-
 }
