@@ -1,4 +1,3 @@
-
 ## 开发之前
 
 > 大约从去年开始吧, 也可能是前年 Html5好像火得不得了, 不得了...总能从网上听说到 XXX混合开发, 为了紧跟潮流(虽然有点儿晚了), 咱们也看看Android+Html5混合开发是怎样的!
@@ -76,7 +75,7 @@ public class FriendsZone {
 
 ### JS 支持类
 
-> 这个类用于和JS进行交互. 
+> 这个类用于和JS进行交互.
 
 
 ``` java
@@ -116,7 +115,7 @@ public class JsSupport {
 
 ### WebView的准备
 
-> WebView的使用有很多需要注意的地方, 咱们分步来说: 
+> WebView的使用有很多需要注意的地方, 咱们分步来说:
 
 > step1: 在Activity中初始化WebView
 
@@ -140,12 +139,13 @@ mWebView.loadUrl(path);
 
 ```
 
-> Note: assets文件的路径大家先不用管 后面会说. 
+> Note: assets文件的路径大家先不用管 后面会说.
 > 上面的addJson()方法接下来会说
 
-> step2: 生成Json数据 传给JsSupport类
+> step2: addJson()方法, 生成Json数据 传给JsSupport类
 
 ``` java
+
 private void addJson() {
     JsSupport jsSupport = new JsSupport(this);
     List<FriendsZone> zones = new ArrayList<>();
@@ -165,6 +165,7 @@ private void addJson() {
 
 > step3: 这一步算是一个小细节, 对于咱们的案例没啥大用处. 就是当你的网页跳转后, 用户按返回键会返回到上一个页面而不是退出整个Activity
 > 重写onBackPressed()方法
+
 ``` java
 
 @Override
@@ -220,9 +221,10 @@ public void onBackPressed() {
 
 ```
 
-> Note: 在这里我只列出了部分核心代码, CSS样式没有放在上面. 
+> Note: 在这里我只列出了部分核心代码, CSS样式没有放在上面.
 > 其实该文件中主要是用js来实现动态添加item 并且 给相应的item设置监听...
 
+> 至此案例代码梳理完毕.
 
 ## 完整代码
 
